@@ -44,9 +44,9 @@ public class ClientController {
                     3) Edit personal file
                     4) Exit""");
             System.out.print("Input number of the command: ");
-            int command = scan.nextInt();
+            String command = scan.nextLine();
             switch (command) {
-                case (1) -> {
+                case ("1") -> {
                     System.out.println("Input student's name: ");
                     String name1 = scan.nextLine();
                     System.out.println("Input student's lastname: ");
@@ -57,7 +57,7 @@ public class ClientController {
                         send("view&" + name1 + "&" + lastname1);
                     return;
                 }
-                case (2) -> {
+                case ("2") -> {
                     System.out.println("Input student's name: ");
                     String name2 = scan.nextLine();
                     System.out.println("Input student's lastname: ");
@@ -71,7 +71,7 @@ public class ClientController {
                     send("create&" + name2 + "&" + lastname2 + "&" + patronymic2 + "&" + age2 + "&" + group2);
                     return;
                 }
-                case (3) -> {
+                case ("3") -> {
                     System.out.println("Input student's name: ");
                     String name3 = scan.nextLine();
                     System.out.println("Input student's lastname: ");
@@ -91,7 +91,7 @@ public class ClientController {
                     send("edit&" + name3 + "&" + lastname3 + "&" + patronymic3 + "&" + newName + "&" + newLastname + "&" + newPatronymic + "&" + newAge + "&" + newGroup);
                     return;
                 }
-                case (4) -> {
+                case ("4") -> {
                     send("disconnect");
                     ClientController.this.downService();
                     return;

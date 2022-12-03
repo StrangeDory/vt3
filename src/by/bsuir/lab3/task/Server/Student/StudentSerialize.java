@@ -21,7 +21,7 @@ import java.util.List;
 
 public class StudentSerialize {
 
-    private static final String PATH = "..\\Archive\\students.xml";
+    private static final String PATH = "src\\by\\bsuir\\lab3\\task\\Server\\Archive\\students.xml";
     private static Document doc;
 
     private List<Student> getStudents() {

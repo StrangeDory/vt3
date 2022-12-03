@@ -16,9 +16,6 @@ public class Student {
         this.group = group;
     }
 
-    public Student() {
-    }
-
     public String getFirstname() {
         return firstname;
     }

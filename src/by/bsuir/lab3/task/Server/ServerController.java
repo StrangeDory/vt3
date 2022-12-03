@@ -26,7 +26,7 @@ public class ServerController extends Thread{
         try {
             while (true) {
                 inputData = in.readLine();
-                if(inputData.contains("disconnect")) {
+                if(inputData.equals("disconnect")) {
                     this.downService();
                     break;
                 }
