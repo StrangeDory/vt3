@@ -41,7 +41,7 @@ public class ClientController {
                      Menu:
                     1) View personal file
                     2) Сreate a new personal file
-                    3) Make changes to the personal file
+                    3) Edit personal file
                     4) Exit""");
             System.out.print("Input number of the command: ");
             int command = scan.nextInt();
@@ -51,7 +51,10 @@ public class ClientController {
                     String name1 = scan.nextLine();
                     System.out.println("Input student's lastname: ");
                     String lastname1 = scan.nextLine();
-                    send("view&" + name1 + "&" + lastname1);
+                    if ((name1.equals("") && lastname1.equals("")))
+                        send("viewAll&");
+                     else
+                        send("view&" + name1 + "&" + lastname1);
                     return;
                 }
                 case (2) -> {
@@ -73,10 +76,23 @@ public class ClientController {
                     String name3 = scan.nextLine();
                     System.out.println("Input student's lastname: ");
                     String lastname3 = scan.nextLine();
-                    send("edit&" + name3 + "&" + lastname3);
+                    System.out.println("Input student's patronymic: ");
+                    String patronymic3 = scan.nextLine();
+                    System.out.print("Input new student's name : ");
+                    String newName = scan.nextLine();
+                    System.out.print("Input new student's lastname : ");
+                    String newLastname = scan.nextLine();
+                    System.out.print("Input new student's patronymic : ");
+                    String newPatronymic = scan.nextLine();
+                    System.out.print("Input new student's age : ");
+                    String newAge = scan.nextLine();
+                    System.out.print("Input new number group : ");
+                    String newGroup = scan.nextLine();
+                    send("edit&" + name3 + "&" + lastname3 + "&" + patronymic3 + "&" + newName + "&" + newLastname + "&" + newPatronymic + "&" + newAge + "&" + newGroup);
                     return;
                 }
                 case (4) -> {
+                    send("disconnect");
                     ClientController.this.downService();
                     return;
                 }
